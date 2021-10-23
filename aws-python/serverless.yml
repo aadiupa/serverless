@@ -18,11 +18,26 @@ provider:
 functions:
   CreateTableAddRecordsAndRead:
     handler: app.handler
-    provisionedConcurrency: 3
     vpc:
       securityGroupIds:
         - sg-0f2772d23d5667429
       subnetIds:
         - subnet-050176daeaaf4ca7e
+
+functions:
+  CreateTableAddRecordsAndRead2:
+    handler: app.handler
+    vpc:
+      securityGroupIds:
+        - sg-0f2772d23d5667429
+      subnetIds:
         - subnet-0c93594d51e8faf9f
+
+functions:
+  CreateTableAddRecordsAndRead3:
+    handler: app.handler
+    vpc:
+      securityGroupIds:
+        - sg-0f2772d23d5667429
+      subnetIds:
         - subnet-0b9ada5c7e8c135b1
