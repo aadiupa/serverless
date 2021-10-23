@@ -4,12 +4,31 @@ service: aws-python
 
 frameworkVersion: '2'
 
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: true # Allows using different python locally
 
 provider:
   name: aws
   runtime: python3.8
   lambdaHashingVersion: 20201221
+  region: ap-south-1
+  memorySize: 128
+  timeout: 3
 
 functions:
-  hello:
-    handler: handler.hello
+  CreateTableAddRecordsAndRead:
+    handler: app.handler
+    vpc: 
+     - vpc-05c6101c94dfe29e1
+       securityGroupIds:
+        - sg-0f2772d23d5667429
+       subnetIds:
+        - subnet-050176daeaaf4ca7e
+        - subnet-0c93594d51e8faf9f
+        - subnet-0b9ada5c7e8c135b1
+
+
