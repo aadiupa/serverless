@@ -31,3 +31,4 @@ functions:
         - subnet-0b9ada5c7e8c135b1
     package:
       artifact: ./my-deployment-package.zip
+      individually: true
