@@ -22,13 +22,11 @@ provider:
 functions:
   CreateTableAddRecordsAndRead:
     handler: app.handler
-    vpc: 
-     - vpc-05c6101c94dfe29e1
+    vpc:
+       - vpc-05c6101c94dfe29e1
        securityGroupIds:
-        - sg-0f2772d23d5667429
+         - sg-0f2772d23d5667429
        subnetIds:
-        - subnet-050176daeaaf4ca7e
-        - subnet-0c93594d51e8faf9f
-        - subnet-0b9ada5c7e8c135b1
-
-
+         - subnet-050176daeaaf4ca7e
+         - subnet-0c93594d51e8faf9f
+         - subnet-0b9ada5c7e8c135b1
