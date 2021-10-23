@@ -29,3 +29,5 @@ functions:
         - subnet-050176daeaaf4ca7e
         - subnet-0c93594d51e8faf9f
         - subnet-0b9ada5c7e8c135b1
+  package:
+    artifact: ./my-deployment-package.zip
