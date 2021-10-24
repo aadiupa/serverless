@@ -18,6 +18,7 @@ provider:
 functions:
   - CreateTableAddRecordsAndRead:
       handler: app.handler
+      reservedConcurrency: 5
       vpc:
         securityGroupIds:
           - sg-0f2772d23d5667429
@@ -27,6 +28,7 @@ functions:
 
   - CreateTableAddRecordsAndRead2:
       handler: app.handler
+      reservedConcurrency: 5
       vpc:
         securityGroupIds:
           - sg-0f2772d23d5667429
@@ -36,6 +38,7 @@ functions:
 
   - CreateTableAddRecordsAndRead3:
       handler: app.handler
+      reservedConcurrency: 5
       vpc:
         securityGroupIds:
           - sg-0f2772d23d5667429
