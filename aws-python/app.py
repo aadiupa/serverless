@@ -27,10 +27,11 @@ def handler(event, context):
     item_count = 0
 
     with conn.cursor() as cur:
-        cur.execute("create table Employee ( EmpID  int NOT NULL, Name varchar(255) NOT NULL, PRIMARY KEY (EmpID))")
-        cur.execute('insert into Employee (EmpID, Name) values(1, "Joe")')
-        cur.execute('insert into Employee (EmpID, Name) values(2, "Bob")')
-        cur.execute('insert into Employee (EmpID, Name) values(3, "Mary")')
+     #   cur.execute("create table Employee ( EmpID  int NOT NULL, Name varchar(255) NOT NULL, PRIMARY KEY (EmpID))")
+     #   cur.execute('insert into Employee (EmpID, Name) values(1, "Joe")')
+     #   cur.execute('insert into Employee (EmpID, Name) values(2, "Bob")')
+     #   cur.execute('insert into Employee (EmpID, Name) values(3, "Mary")')
+         cur.execute('select * from Employee')
         conn.commit()
         cur.execute("select * from Employee")
         for row in cur:

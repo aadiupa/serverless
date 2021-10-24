@@ -4,6 +4,7 @@
 # .tfstate files
 *.tfstate
 *.tfstate.*
+rds_config.py
 
 # Crash log files
 crash.log
