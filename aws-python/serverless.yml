@@ -27,7 +27,7 @@ functions:
         subnetIds:
           - subnet-050176daeaaf4ca7e
       events:
-        s3:
+        - s3:
           bucket: terraformadityabackend
           event: s3:ObjectCreated:*                
 
@@ -42,7 +42,7 @@ functions:
         subnetIds:
           - subnet-0c93594d51e8faf9f
       events:      
-        sqs:
+        - sqs:
             arn: arn:aws:sqs:ap-south-1:612053565767:serverless-deadletter
             batchSize: 10
             maximumBatchingWindow: 10
