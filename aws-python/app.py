@@ -32,9 +32,9 @@ def handler(event, context):
      #   cur.execute('insert into Employee (EmpID, Name) values(2, "Bob")')
      #   cur.execute('insert into Employee (EmpID, Name) values(3, "Mary")')
          cur.execute('select * from Employee')
-        conn.commit()
-        cur.execute("select * from Employee")
-        for row in cur:
+         conn.commit()
+         cur.execute("select * from Employee")
+         for row in cur:
             item_count += 1
             logger.info(row)
             #print(row)

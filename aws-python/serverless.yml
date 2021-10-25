@@ -19,26 +19,40 @@ functions:
   - CreateTableAddRecordsAndRead:
       handler: app.handler
       reservedConcurrency: 5
+      role: arn:aws:iam::612053565767:role/lambda-rds
+      onError: arn:aws:sqs:ap-south-1:612053565767:serverless
       vpc:
         securityGroupIds:
           - sg-0f2772d23d5667429
         subnetIds:
           - subnet-050176daeaaf4ca7e
+      events:
+        s3:
+          bucket: terraformadityabackend
+          event: s3:ObjectCreated:*                
 
 
   - CreateTableAddRecordsAndRead2:
       handler: app.handler
       reservedConcurrency: 5
+      role: arn:aws:iam::612053565767:role/lambda-rds
       vpc:
         securityGroupIds:
           - sg-0f2772d23d5667429
         subnetIds:
           - subnet-0c93594d51e8faf9f
+      events:      
+        sqs:
+            arn: arn:aws:sqs:ap-south-1:612053565767:serverless-deadletter
+            batchSize: 10
+            maximumBatchingWindow: 10
+            enabled: true
 
 
   - CreateTableAddRecordsAndRead3:
       handler: app.handler
       reservedConcurrency: 5
+      role: arn:aws:iam::612053565767:role/lambda-rds
       vpc:
         securityGroupIds:
           - sg-0f2772d23d5667429
